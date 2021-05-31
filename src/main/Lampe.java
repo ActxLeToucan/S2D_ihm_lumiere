@@ -1,3 +1,4 @@
+package main;
 /**
  * classe representant une lampe, correspondant a une case de la grille
  */

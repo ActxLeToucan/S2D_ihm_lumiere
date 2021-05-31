@@ -1,3 +1,4 @@
+package main;
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -33,8 +34,8 @@ public class Grille extends Observable {
 			lampes[x][y].inverserEtat();
 			setChanged();
 		} catch (ArrayIndexOutOfBoundsException e) {
-			e.printStackTrace();
-			System.out.println("en dehors de la grille");
+			// on garde ca pour le debugage
+			System.out.println("[" + x + ";" + y + "] est en dehors de la grille");
 		}
 		notifyObservers();
 	}
@@ -45,11 +46,13 @@ public class Grille extends Observable {
 	 * 			position sur l'axe des abscisses
 	 * @param y
 	 * 			position sur l'axe des ordonnees
-	 * @throws Exception
 	 */
-	public void changer5Lampes(int x, int y) throws Exception {
-		// TODO
-		throw new Exception("TODO");
+	public void changer5Lampes(int x, int y) {
+		changerUneLampe(x, y);
+		changerUneLampe(x+1, y);
+		changerUneLampe(x-1, y);
+		changerUneLampe(x, y+1);
+		changerUneLampe(x, y-1);
 	}
 	
 	/**
@@ -72,4 +75,31 @@ public class Grille extends Observable {
 		return res;
 	}
 	
+	/**
+	 * donne l'etat de la lampe aux coordonnees x, y
+	 * @param x
+	 * 			position sur l'axe des abscisses
+	 * @param y
+	 * 			position sur l'axe des ordonnees
+	 * @return etat de la lampe
+	 */
+	public boolean getEtatLampe(int x, int y) {
+		return lampes[x][y].getEtat();
+	}
+	
+	/**
+	 * donne le nombre de lampes allumees
+	 * @return nombre de lampes allumees
+	 */
+	public int getNbAllumees() {
+		int res = 0;
+		for (int i = 0; i<TAILLE_GRILLE; i++) {
+			for (int j = 0; j<TAILLE_GRILLE; j++) {
+				if (lampes[i][j].getEtat()) {
+					res++;
+				}
+			}
+		}
+		return res;
+	}
 }

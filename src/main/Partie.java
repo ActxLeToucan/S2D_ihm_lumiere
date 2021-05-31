@@ -1,3 +1,4 @@
+package main;
 
 public class Partie {
 	public final static int EN_COURS = 0;
