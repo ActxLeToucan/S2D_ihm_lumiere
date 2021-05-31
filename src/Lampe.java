@@ -5,7 +5,7 @@ public class Lampe {
     /**
      * attribut informant de l etat d une lampe, true si allume 
      */
-    private estAllumee boolean; 
+    private boolean estAllumee; 
 
     /**
      * constructeur de lampe, elle eteinte a l initialisation
