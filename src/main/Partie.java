@@ -18,11 +18,6 @@ public class Partie {
 		deplacements++;
 	}
 	
-	public static void reset() {
-		etat = INIT;
-		resetDeplacements();
-	}
-	
 	public static int getDeplacements() {
 		return deplacements;
 	}

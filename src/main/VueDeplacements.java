@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.Observable;
@@ -15,11 +16,13 @@ public class VueDeplacements extends JPanel implements Observer {
 		super.paintComponent(g);
 		if (grille != null) {
 			JLabel texte = new JLabel("Nb Deplacements");
+			JPanel centre = new JPanel();
 			JLabel nombre = new JLabel("" + Partie.getDeplacements());
+			centre.add(nombre, new FlowLayout());
 			nombre.setFont(new Font(nombre.getFont().getFontName(), nombre.getFont().getStyle(), 20));
 			this.setLayout(new BorderLayout());
 			this.add(texte, BorderLayout.NORTH);
-			this.add(nombre, BorderLayout.CENTER);
+			this.add(centre, BorderLayout.CENTER);
 		}
 	}
 	

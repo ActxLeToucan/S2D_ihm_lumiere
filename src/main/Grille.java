@@ -8,7 +8,7 @@ import java.util.Observable;
  */
 public class Grille extends Observable {
 	public static final int TAILLE_GRILLE = 5;
-	public static final int ALEA = 8;
+	private static int alea = 8;
 	private Lampe[][] lampes;
 
 	/**
@@ -125,7 +125,7 @@ public class Grille extends Observable {
 			}
 		}
 		eteindreTout();
-		for (int i = 0; i<ALEA; i++) {
+		for (int i = 0; i<alea; i++) {
 			int randomNumber = (int)(Math.random()*TAILLE_GRILLE*TAILLE_GRILLE);
 			Lampe l = liste.get(randomNumber);
 			if (l.getEtat()) {
@@ -136,5 +136,15 @@ public class Grille extends Observable {
 		}
 		setChanged();
 		notifyObservers();
+	}
+
+	public static void setAlea(int aleatoire) {
+		if (aleatoire <= TAILLE_GRILLE*TAILLE_GRILLE) {
+			alea = aleatoire;
+		}
+	}
+	
+	public static int getAlea() {
+		return alea;
 	}
 }

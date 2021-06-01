@@ -27,6 +27,7 @@ public class Principale {
 		ControleurAlea ctrlAlea = new ControleurAlea(grille);
 		ControleurJouer ctrlJouer = new ControleurJouer(grille);
 		ControleurQuitter ctrlQuitter = new ControleurQuitter(grille);
+		ControleurNbAlea ctrlNbAlea = new ControleurNbAlea(grille);
 		//ControleurGrille ctrlGrille = new ControleurGrille(grille);
 
 		menu = new JPanel(new GridLayout(6, 1));
@@ -35,6 +36,7 @@ public class Principale {
 		menu.add(ctrlJouer);
 		menu.add(vueDep);
 		menu.add(ctrlQuitter);
+		menu.add(ctrlNbAlea);
 		
 		//ranger tout dans une frame
 		JFrame frame=new JFrame();
