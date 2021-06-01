@@ -7,8 +7,8 @@ import java.util.Observer;
 
 public class VueGrille extends JPanel implements Observer {
 
-	final static Color COUL_ALLUME = Color.BLUE;
-	final static Color COUL_ETEINTE = Color.CYAN;
+	final static Color COUL_ALLUME = Color.CYAN;
+	final static Color COUL_ETEINTE = Color.BLUE;
 
 	private Grille modele;
 	// pour chaque case de la liste/tableau de lampe on affiche un rectangle
