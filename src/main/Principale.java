@@ -13,11 +13,11 @@ public class Principale {
 		Grille grille = new Grille();
 
 		//creer des vues
-		//VueGrille vueGrille = new VueGrille();
+		VueGrille vueGrille = new VueGrille();
 		VueTexte vueTxt = new VueTexte();
 		VueDeplacements vueDep = new VueDeplacements();
 		//attacher les vues au modele
-		//grille.addObserver(vueGrille);
+		grille.addObserver(vueGrille);
 		grille.addObserver(vueTxt);
 		grille.addObserver(vueDep);
 		//vueGrille.setPreferredSize(new Dimension(400,400));
@@ -41,7 +41,7 @@ public class Principale {
 		//ranger tout dans une frame
 		JFrame frame=new JFrame();
 		
-		//frame.add(vueGrille, BorderLayout.CENTER);
+		frame.add(vueGrille, BorderLayout.CENTER);
 		frame.add(menu, BorderLayout.WEST);
 		frame.setSize(new Dimension(600,400));
 		frame.setVisible(true);
