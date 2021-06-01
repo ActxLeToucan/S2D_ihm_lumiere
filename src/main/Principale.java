@@ -24,15 +24,15 @@ public class Principale {
 		
 		//creer les controleurs
 		ControleurConfig ctrlConfig = new ControleurConfig(grille);
-		//ControleurAlea ctrlAlea = new ControleurAlea(grille);
-		//ControleurJouer ctrlJouer = new ControleurJouer(grille);
+		ControleurAlea ctrlAlea = new ControleurAlea(grille);
+		ControleurJouer ctrlJouer = new ControleurJouer(grille);
 		ControleurQuitter ctrlQuitter = new ControleurQuitter(grille);
 		//ControleurGrille ctrlGrille = new ControleurGrille(grille);
 
 		menu = new JPanel(new GridLayout(6, 1));
 		menu.add(ctrlConfig);
-		//menu.add(ctrlAlea);
-		//menu.add(ctrlJouer);
+		menu.add(ctrlAlea);
+		menu.add(ctrlJouer);
 		menu.add(vueDep);
 		menu.add(ctrlQuitter);
 		

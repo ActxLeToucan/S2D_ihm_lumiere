@@ -20,11 +20,6 @@ public class ControleurConfig extends JButton {
 		super();
 		this.modele = g;
 		this.setText("Configurer");
-		if (Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.CONFIG) {
-			this.setEnabled(false);
-		} else {
-			this.setEnabled(true);
-		}
 		
 		this.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

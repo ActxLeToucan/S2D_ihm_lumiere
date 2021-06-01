@@ -17,12 +17,6 @@ public class ControleurQuitter extends JButton {
 
         setText("Quitter");
         
-        if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.CONFIG) {
-			this.setEnabled(false);
-		} else {
-			this.setEnabled(true);
-		}
-        
         this.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 // si l utilisateur n est pas en train de configurer la partie ou n a pas
@@ -38,7 +32,7 @@ public class ControleurQuitter extends JButton {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.CONFIG) {
+		if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.CONFIG || Partie.getEtat() == Partie.ALEA || Partie.getEtat() == Partie.FIN) {
 			this.setEnabled(false);
 		} else {
 			this.setEnabled(true);

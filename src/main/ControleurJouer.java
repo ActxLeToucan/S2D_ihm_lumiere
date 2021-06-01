@@ -15,12 +15,6 @@ public class ControleurJouer extends JButton {
         modele = g;
 
         setText("Jouer");
-        
-        if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.FIN || Partie.getEtat() == Partie.EN_COURS) {
-			this.setEnabled(false);
-		} else {
-			this.setEnabled(true);
-		}
 
         this.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
