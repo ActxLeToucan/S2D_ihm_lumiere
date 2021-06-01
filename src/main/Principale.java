@@ -55,14 +55,16 @@ public class Principale {
 		menu.add(vueDep);
 		menu.add(ctrlQuitter);
 		menu.add(options);
+		menu.setPreferredSize(new Dimension(200, 400));
 		
 		//ranger tout dans une frame
 		JFrame frame=new JFrame();
 		
-		frame.add(vueGrille, BorderLayout.EAST);
-		frame.add(menu, BorderLayout.CENTER);
-		frame.setSize(new Dimension(600,400));
+		frame.add(vueGrille, BorderLayout.CENTER);
+		frame.add(menu, BorderLayout.WEST);
+		frame.pack();
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// init
 		grille.changerUneLampe(0, 0);
