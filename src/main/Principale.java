@@ -23,11 +23,11 @@ public class Principale {
 		vueGrille.setPreferredSize(new Dimension(400,400));
 		
 		//creer les controleurs
-		ControleurConfig ctrlConfig = new ControleurConfig(c);
-		ControleurAlea ctrlAlea = new ControleurAlea(c);
-		ControleurJouer ctrlJouer = new ControleurJouer(c);
-		ControleurQuitter ctrlQuitter = new ControleurQuitter(c);
-		ControleurGrille ctrlGrille = new ControleurGrille(c);
+		ControleurConfig ctrlConfig = new ControleurConfig(grille);
+		ControleurAlea ctrlAlea = new ControleurAlea(grille);
+		ControleurJouer ctrlJouer = new ControleurJouer(grille);
+		ControleurQuitter ctrlQuitter = new ControleurQuitter(grille);
+		ControleurGrille ctrlGrille = new ControleurGrille(grille);
 
 		menu = new JPanel(new GridLayout());
 		menu.add(ctrlConfig);
@@ -39,7 +39,7 @@ public class Principale {
 		//ranger tout dans une frame
 		JFrame frame=new JFrame();
 		
-		frame.add(vueGrille, BorderLayout.CENTER);
+		//frame.add(vueGrille, BorderLayout.CENTER);
 		frame.add(menu, BorderLayout.WEST);
 		frame.setSize(new Dimension(600,400));
 		frame.setVisible(true);
@@ -48,6 +48,10 @@ public class Principale {
 		grille.changerUneLampe(0, 0);
 		grille.changerUneLampe(0, 0);
 	}
+	
+	/**
+	 * actualise les boutons du menu
+	 */
 	public static void repaintMenu() {
 		menu.repaint();
 	}
