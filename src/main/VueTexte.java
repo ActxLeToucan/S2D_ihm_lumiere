@@ -1,4 +1,5 @@
 package main;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -6,6 +7,9 @@ import java.util.Observer;
  * vue mettant a jour l'affichage dans la console
  */
 public class VueTexte implements Observer {
+	/**
+	 * lien avec le modele de type Grille
+	 */
 	private Grille grille;
 	
 	/**

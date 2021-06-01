@@ -5,20 +5,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
-
+/**
+ * controleur pour le bouton "Jouer" permettant de passer en mode EN_COURS (voir documentation de Partie.EN_COURS)
+ */
 public class ControleurJouer extends JButton {
+	/**
+	 * lien avec le modele de type Grille
+	 */
     private Grille modele;
-    // contructeur
+    
+    /**
+	 * constructeur du controleur
+	 * @param g
+	 * 			modele grille
+	 */
     public ControleurJouer(Grille g){
         super();
-        // lien avec le modele qui est passe en paramametre
         modele = g;
 
         setText("Jouer");
 
         this.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                // en lance la partie en changeant son etat a EN_COURS
+                // on lance la partie en changeant son etat a EN_COURS
                 Partie.setEtat(Partie.EN_COURS);
 			}
 		});

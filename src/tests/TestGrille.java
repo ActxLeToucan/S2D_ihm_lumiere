@@ -1,8 +1,12 @@
 package tests;
+
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import main.Grille;
 
+/**
+ * tests pour les methodes cruciales de la grille
+ */
 public class TestGrille {
 	@Test
 	/**

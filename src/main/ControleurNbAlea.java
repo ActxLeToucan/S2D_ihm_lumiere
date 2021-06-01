@@ -7,12 +7,19 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+/**
+ * controleur permettant de modifier le nombre de cases de la grille qui seront allumees en aleatoire
+ */
 public class ControleurNbAlea extends JSpinner {
-	private static SpinnerModel spinnerModel = new SpinnerNumberModel(Grille.getAlea(), 1, Grille.getTaille()*Grille.getTaille(), 1);
 	/**
 	 * lien avec le modele de type Grille
 	 */
 	private Grille modele;
+	
+	/**
+	 * modele de spinner a partir de la grille
+	 */
+	private static SpinnerModel spinnerModel = new SpinnerNumberModel(Grille.getAlea(), 1, Grille.getTaille()*Grille.getTaille(), 1);
 	
 	/**
 	 * constructeur du controleur
@@ -21,13 +28,13 @@ public class ControleurNbAlea extends JSpinner {
 	 */
 	public ControleurNbAlea(Grille g) {
 		super(spinnerModel);
-		this.modele = g;
+		modele = g;
 		
 		this.addChangeListener(new ChangeListener() {
 	         public void stateChanged(ChangeEvent e) {
 	             Grille.setAlea(Integer.parseInt(((JSpinner)e.getSource()).getValue().toString()));
 	          }
-	       });
+		});
 	}
 	
 	public void paintComponent(Graphics g) {

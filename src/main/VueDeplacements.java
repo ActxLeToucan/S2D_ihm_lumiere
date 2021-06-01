@@ -9,7 +9,13 @@ import java.util.Observer;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * vue indiquant le nombre de deplacements durant la partie
+ */
 public class VueDeplacements extends JPanel implements Observer {
+	/**
+	 * lien avec le modele de type Grille
+	 */
 	private Grille grille;
 	
 	public void paintComponent(Graphics g) {

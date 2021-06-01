@@ -5,12 +5,18 @@ import javax.swing.*;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * vue affichant la grille dans la fenetre
+ */
 public class VueGrille extends JPanel implements Observer {
-
+	/**
+	 * lien avec le modele de type Grille
+	 */
 	private Grille modele;
-	// pour chaque case de la liste/tableau de lampe on affiche un rectangle
-	// representant la lampe, si elle est allume la couleur est COUL_ALLUME sinon
-	// COUL_ETEINTE
+	
+	/* pour chaque case de la liste/tableau de lampe on affiche un rectangle
+	   representant la lampe, si elle est allume la couleur est coulAllume sinon
+	   coulEteinte */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		int tailleCarreX = getWidth()/Grille.getTaille();

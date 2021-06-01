@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
+/**
+ * controleur pour le bouton "Aleatoire" permettant d'afficher des cases aleatoirement sur la grille, et passe en mode ALEA (voir documentation de Partie.ALEA)
+ */
 public class ControleurAlea extends JButton {
 	/**
 	 * lien avec le modele de type Grille
@@ -19,6 +22,7 @@ public class ControleurAlea extends JButton {
 	public ControleurAlea(Grille g) {
 		super();
 		this.modele = g;
+		
 		this.setText("Aléatoire");
 		
 		this.addActionListener(new ActionListener() {

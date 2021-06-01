@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 
+/**
+ * controleur permettant de changer la couleur des lampes qui sont eteintes
+ */
 public class ControleurCouleurOff extends JButton {
 	/**
 	 * lien avec le modele de type Grille
@@ -21,6 +24,7 @@ public class ControleurCouleurOff extends JButton {
 	public ControleurCouleurOff(Grille g) {
 		super();
 		this.modele = g;
+		
 		this.setText("OFF");
 		
 		this.addActionListener(new ActionListener() {

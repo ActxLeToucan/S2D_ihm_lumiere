@@ -14,6 +14,7 @@ public class Lampe {
     public Lampe(){
         this.estAllumee = false;
     }
+    
     /**
      * methode inversant l etat de la lampe appellante
      */
@@ -24,18 +25,21 @@ public class Lampe {
             this.estAllumee = true;
         }
     }
+    
     /**
      * methode allumant la lampe en appel 
      */
     public void allumer(){
         this.estAllumee = true;
     }
+    
     /**
      * methode eteignant la lampe en appel 
      */
     public void eteindre(){
         this.estAllumee = false;
     }
+    
     /**
      * renvoie l etat de la lampe
      * @return true si la lampe est allumee, false si eteinte

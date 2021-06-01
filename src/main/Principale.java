@@ -8,7 +8,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Principale {
+	/**
+	 * partie menu contenant les boutons, spinners, ...
+	 */
 	private static JPanel menu;
+	
+	/**
+	 * programme principal
+	 * @param args
+	 * 			arguments ligne de commande
+	 */
 	public static void main(String[] args) {
 		//creer une grille (modele)
 		Grille grille = new Grille();
@@ -58,7 +67,6 @@ public class Principale {
 		// init
 		grille.changerUneLampe(0, 0);
 		grille.changerUneLampe(0, 0);
-		grille.gg();
 	}
 	
 	/**

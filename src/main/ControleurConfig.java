@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
+/**
+ * controleur pour le bouton "Configurer" permettant de passer en mode CONFIG (voir documentation de Partie.CONFIG)
+ */
 public class ControleurConfig extends JButton {
 	/**
 	 * lien avec le modele de type Grille
@@ -19,6 +22,7 @@ public class ControleurConfig extends JButton {
 	public ControleurConfig(Grille g) {
 		super();
 		this.modele = g;
+		
 		this.setText("Configurer");
 		
 		this.addActionListener(new ActionListener() {
