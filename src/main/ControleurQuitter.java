@@ -1,12 +1,18 @@
+package main;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 public class ControleurQuitter extends JButton {
 
-    private Grille grille;
+    private Grille modele;
 
     // contructeur
     public ControleurQuitter(Grille g){
         super();
         // lien avec le modele qui est passe en paramametre
-        Grille modele = g;
+        modele = g;
 
         setText("Quitter");
         
