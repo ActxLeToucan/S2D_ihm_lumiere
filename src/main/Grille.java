@@ -7,17 +7,18 @@ import java.util.Observable;
  * @author antoi
  */
 public class Grille extends Observable {
-	public static final int TAILLE_GRILLE = 5;
+	protected static final int TAILLE_DEF = 5;
+	private static int taille = TAILLE_DEF;
 	private static int alea = 8;
-	private Lampe[][] lampes;
+	private static Lampe[][] lampes;
 
 	/**
 	 * constructeur de grille
 	 */
 	public Grille() {
-		lampes = new Lampe[TAILLE_GRILLE][TAILLE_GRILLE];
-		for (int i = 0; i<TAILLE_GRILLE; i++) {
-			for (int j = 0; j<TAILLE_GRILLE; j++) {
+		lampes = new Lampe[taille][taille];
+		for (int i = 0; i<taille; i++) {
+			for (int j = 0; j<taille; j++) {
 				lampes[i][j] = new Lampe();
 			}
 		}
@@ -62,9 +63,9 @@ public class Grille extends Observable {
 	 */
 	public String toString() {
 		String res = "";
-		for (int i = 0; i<TAILLE_GRILLE; i++) {
+		for (int i = 0; i<taille; i++) {
 			String ligne = "";
-			for (int j = 0; j<TAILLE_GRILLE; j++) {
+			for (int j = 0; j<taille; j++) {
 				if (lampes[j][i].getEtat()) {
 					ligne += "[X]";
 				} else {
@@ -94,8 +95,8 @@ public class Grille extends Observable {
 	 */
 	public int getNbAllumees() {
 		int res = 0;
-		for (int i = 0; i<TAILLE_GRILLE; i++) {
-			for (int j = 0; j<TAILLE_GRILLE; j++) {
+		for (int i = 0; i<taille; i++) {
+			for (int j = 0; j<taille; j++) {
 				if (lampes[i][j].getEtat()) {
 					res++;
 				}
@@ -108,8 +109,8 @@ public class Grille extends Observable {
 	 * eteint toutes les lampes
 	 */
 	public void eteindreTout() {
-		for (int i = 0; i<TAILLE_GRILLE; i++) {
-			for (int j = 0; j<TAILLE_GRILLE; j++) {
+		for (int i = 0; i<taille; i++) {
+			for (int j = 0; j<taille; j++) {
 				lampes[i][j].eteindre();
 			}
 		}
@@ -117,16 +118,19 @@ public class Grille extends Observable {
 		notifyObservers();
 	}
 
+	/**
+	 * allume les lampes aleatoirement sur la grille
+	 */
 	public void allumerAlea() {
 		ArrayList<Lampe> liste = new ArrayList<Lampe>();
-		for (int i = 0; i<TAILLE_GRILLE; i++) {
-			for (int j = 0; j<TAILLE_GRILLE; j++) {
+		for (int i = 0; i<taille; i++) {
+			for (int j = 0; j<taille; j++) {
 				liste.add(lampes[j][i]);
 			}
 		}
 		eteindreTout();
 		for (int i = 0; i<alea; i++) {
-			int randomNumber = (int)(Math.random()*TAILLE_GRILLE*TAILLE_GRILLE);
+			int randomNumber = (int)(Math.random()*taille*taille);
 			Lampe l = liste.get(randomNumber);
 			if (l.getEtat()) {
 				i--;
@@ -138,13 +142,92 @@ public class Grille extends Observable {
 		notifyObservers();
 	}
 
+	/**
+	 * definit alea
+	 * @param aleatoire
+	 * 			nombre de cases a allumer aleatoirement
+	 */
 	public static void setAlea(int aleatoire) {
-		if (aleatoire <= TAILLE_GRILLE*TAILLE_GRILLE) {
+		if (aleatoire <= taille*taille) {
 			alea = aleatoire;
 		}
 	}
 	
+	/**
+	 * donne alea
+	 * @return nombre de cases a allumer aleatoirement
+	 */
 	public static int getAlea() {
 		return alea;
+	}
+	
+	/**
+	 * methode secrete
+	 */
+	public void gg() {
+		eteindreTout();
+		setTaille(15);
+		changerUneLampe(3,4);
+		changerUneLampe(4,4);
+		changerUneLampe(5,4);
+		changerUneLampe(6,4);
+		changerUneLampe(2,5);
+		changerUneLampe(2,6);
+		changerUneLampe(2,7);
+		changerUneLampe(2,8);
+		changerUneLampe(2,9);
+		changerUneLampe(3,10);
+		changerUneLampe(4,10);
+		changerUneLampe(5,10);
+		changerUneLampe(6,10);
+		changerUneLampe(6,9);
+		changerUneLampe(6,8);
+		changerUneLampe(6,7);
+		changerUneLampe(5,7);
+
+		changerUneLampe(9,4);
+		changerUneLampe(10,4);
+		changerUneLampe(11,4);
+		changerUneLampe(12,4);
+		changerUneLampe(8,5);
+		changerUneLampe(8,6);
+		changerUneLampe(8,7);
+		changerUneLampe(8,8);
+		changerUneLampe(8,9);
+		changerUneLampe(9,10);
+		changerUneLampe(10,10);
+		changerUneLampe(11,10);
+		changerUneLampe(12,10);
+		changerUneLampe(12,9);
+		changerUneLampe(12,8);
+		changerUneLampe(12,7);
+		changerUneLampe(11,7);
+		setChanged();
+		notifyObservers();
+	}
+	
+	/**
+	 * donne la taille de la grille
+	 * @return taille de la grille
+	 */
+	public static int getTaille() {
+		return taille;
+	}
+	
+	/**
+	 * change la taille de la grille
+	 * @param taille
+	 * 			taille de la grille
+	 */
+	public static void setTaille(int taille) {
+		if (taille > 0) {
+			Grille.taille = taille;
+			lampes = new Lampe[taille][taille];
+			for (int i = 0; i<taille; i++) {
+				for (int j = 0; j<taille; j++) {
+					lampes[i][j] = new Lampe();
+				}
+			}
+		}
 	}
 }

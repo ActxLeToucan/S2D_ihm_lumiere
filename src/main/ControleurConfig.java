@@ -30,7 +30,7 @@ public class ControleurConfig extends JButton {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if (Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.CONFIG) {
+		if (Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.CONFIG || Partie.getEtat() == Partie.GAGNE) {
 			this.setEnabled(false);
 		} else {
 			this.setEnabled(true);

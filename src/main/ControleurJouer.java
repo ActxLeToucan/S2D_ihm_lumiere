@@ -26,7 +26,7 @@ public class ControleurJouer extends JButton {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.FIN || Partie.getEtat() == Partie.EN_COURS) {
+		if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.FIN || Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.GAGNE) {
 			this.setEnabled(false);
 		} else {
 			this.setEnabled(true);

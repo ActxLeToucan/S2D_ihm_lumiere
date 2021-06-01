@@ -21,6 +21,7 @@ public class ControleurQuitter extends JButton {
 			public void actionPerformed(ActionEvent e) {
                 // si l utilisateur n est pas en train de configurer la partie ou n a pas
                 // lance de partie on ne fait rien
+				Grille.setTaille(Grille.TAILLE_DEF);
                 modele.eteindreTout();
                 Partie.setEtat(Partie.FIN);
                 Partie.resetDeplacements();
@@ -30,10 +31,10 @@ public class ControleurQuitter extends JButton {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if (Partie.getEtat() == Partie.INIT || Partie.getEtat() == Partie.CONFIG || Partie.getEtat() == Partie.ALEA || Partie.getEtat() == Partie.FIN) {
-			this.setEnabled(false);
-		} else {
+		if (Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.GAGNE) {
 			this.setEnabled(true);
+		} else {
+			this.setEnabled(false);
 		}
 	}
 }

@@ -8,7 +8,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class ControleurNbAlea extends JSpinner {
-	private static SpinnerModel spinnerModel = new SpinnerNumberModel(Grille.getAlea(), 1, Grille.TAILLE_GRILLE*Grille.TAILLE_GRILLE, 1);
+	private static SpinnerModel spinnerModel = new SpinnerNumberModel(Grille.getAlea(), 1, Grille.getTaille()*Grille.getTaille(), 1);
 	/**
 	 * lien avec le modele de type Grille
 	 */
@@ -32,7 +32,7 @@ public class ControleurNbAlea extends JSpinner {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if (Partie.getEtat() == Partie.EN_COURS) {
+		if (Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.GAGNE) {
 			this.setEnabled(false);
 		} else {
 			this.setEnabled(true);

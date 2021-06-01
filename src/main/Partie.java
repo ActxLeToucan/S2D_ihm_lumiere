@@ -5,6 +5,7 @@ public class Partie {
 	public final static int FIN = 1;
 	public final static int CONFIG = 2;
 	public final static int ALEA = 3;
+	public final static int GAGNE = 4;
 	public final static int INIT = -1;
 	
 	private static int deplacements = 0;

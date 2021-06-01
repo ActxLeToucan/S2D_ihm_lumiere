@@ -16,13 +16,13 @@ public class VueGrille extends JPanel implements Observer {
 	// COUL_ETEINTE
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		int tailleCarreX = getWidth()/Grille.TAILLE_GRILLE;
-		int tailleCarreY = getHeight()/Grille.TAILLE_GRILLE;
+		int tailleCarreX = getWidth()/Grille.getTaille();
+		int tailleCarreY = getHeight()/Grille.getTaille();
 		
 		if (modele != null) {
 			
-			for (int i = 0; i<Grille.TAILLE_GRILLE; i++) {
-				for (int j = 0; j<Grille.TAILLE_GRILLE; j++) {
+			for (int i = 0; i<Grille.getTaille(); i++) {
+				for (int j = 0; j<Grille.getTaille(); j++) {
 					if (modele.getEtatLampe(j, i)) {
 						g.setColor(COUL_ALLUME);
 					} else {
