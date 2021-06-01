@@ -102,4 +102,17 @@ public class Grille extends Observable {
 		}
 		return res;
 	}
+	
+	/**
+	 * eteint toutes les lampes
+	 */
+	public void eteindreTout() {
+		for (int i = 0; i<TAILLE_GRILLE; i++) {
+			for (int j = 0; j<TAILLE_GRILLE; j++) {
+				lampes[i][j].eteindre();
+			}
+		}
+		setChanged();
+		notifyObservers();
+	}
 }

@@ -34,5 +34,6 @@ public class Partie {
 		if (e==EN_COURS || e==FIN || e==CONFIG || e==INIT) {
 			etat = e;
 		}
+		Principale.repaintMenu();
 	}
 }
