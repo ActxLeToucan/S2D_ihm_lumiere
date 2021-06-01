@@ -18,8 +18,8 @@ public class ControleurJouer extends JButton {
 
         this.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                    
-                
+                // en lance la partie en changeant son etat a EN_COURS
+                Partie.setEtat(Partie.EN_COURS);
 			}
 		});
     }
