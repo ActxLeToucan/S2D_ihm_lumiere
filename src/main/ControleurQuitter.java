@@ -23,5 +23,5 @@ public class ControleurQuitter extends JButton {
 			}
 		});
     }
- 
+ // commentaire inutile
 }
