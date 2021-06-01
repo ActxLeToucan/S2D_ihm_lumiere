@@ -10,11 +10,18 @@ public class ControleurQuitter extends JButton {
 
         setText("Quitter");
 
-        this.addActionListener(new ChangeListener() {
+        this.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+                // si l utilisateur n est pas en train de configurer la partie ou n a pas
+                // lance de partie on ne fait rien
+                if( Partie.getEtat == INIT ||Partie.getEtat == CONFIG){
+                Partie.setEtat(Partie.FIN);
+                Partie.resetDeplacements();
+                }
+                // mise a jour des boutons
+                Partie.repaintMenu()
 			}
 		});
     }
-
+ 
 }
