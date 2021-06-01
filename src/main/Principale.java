@@ -48,7 +48,7 @@ public class Principale {
 		grille.changerUneLampe(0, 0);
 		grille.changerUneLampe(0, 0);
 	}
-	public void repaintMenu() {
+	public static void repaintMenu() {
 		menu.repaint();
 	}
 }
