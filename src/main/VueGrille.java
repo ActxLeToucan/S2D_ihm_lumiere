@@ -27,6 +27,8 @@ public class VueGrille extends JPanel{
             g.setColors(COOL_ETEINTE);
           }
           g.fillRect(getHeight()/Grille.TAILLE_GRILLE, getWidth()/Grille.TAILLE_GRILLE, x, y);
+          x = getHeight()/Grille.TAILLE_GRILLE;
+          y = getWidth()/Grille.TAILLE_GRILLE;
         }
       }
     }
