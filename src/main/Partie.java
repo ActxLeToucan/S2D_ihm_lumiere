@@ -4,6 +4,7 @@ public class Partie {
 	public final static int EN_COURS = 0;
 	public final static int FIN = 1;
 	public final static int CONFIG = 2;
+	public final static int ALEA = 3;
 	public final static int INIT = -1;
 	
 	private static int deplacements = 0;
@@ -31,7 +32,7 @@ public class Partie {
 	}
 	
 	public static void setEtat(int e) {
-		if (e==EN_COURS || e==FIN || e==CONFIG || e==INIT) {
+		if (e==EN_COURS || e==FIN || e==CONFIG || e==INIT || e==ALEA) {
 			etat = e;
 		}
 		Principale.repaintMenu();
