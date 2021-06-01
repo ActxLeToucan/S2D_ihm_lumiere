@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Principale {
+	private static JPanel menu;
 	public static void main(String[] args) {
 		//creer une grille (modele)
 		Grille grille = new Grille();
@@ -28,7 +29,7 @@ public class Principale {
 		ControleurQuitter ctrlQuitter = new ControleurQuitter(c);
 		ControleurGrille ctrlGrille = new ControleurGrille(c);
 
-		JPanel menu = new JPanel(new GridLayout());
+		menu = new JPanel(new GridLayout());
 		menu.add(ctrlConfig);
 		menu.add(ctrlAlea);
 		menu.add(ctrlJouer);
@@ -46,5 +47,8 @@ public class Principale {
 		// init
 		grille.changerUneLampe(0, 0);
 		grille.changerUneLampe(0, 0);
+	}
+	public void repaintMenu() {
+		menu.repaint();
 	}
 }
