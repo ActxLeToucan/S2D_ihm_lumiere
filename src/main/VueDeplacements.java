@@ -15,7 +15,7 @@ public class VueDeplacements extends JPanel implements Observer {
 		super.paintComponent(g);
 		if (grille != null) {
 			JLabel texte = new JLabel("Nb Deplacements");
-			JLabel nombre = new JLabel("" + grille.getNbAllumees());
+			JLabel nombre = new JLabel("" + Partie.getDeplacements());
 			nombre.setFont(new Font(nombre.getFont().getFontName(), nombre.getFont().getStyle(), 20));
 			this.setLayout(new BorderLayout());
 			this.add(texte, BorderLayout.NORTH);
