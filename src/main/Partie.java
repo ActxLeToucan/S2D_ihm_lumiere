@@ -17,28 +17,61 @@ public class Partie {
 	 * Indique que la partie vient d'etre modifie aleatoirement. On ne peut pas arreter, cependant, on peut jouer, configurer ou modifier la partie aleatoirement.
 	 */
 	public final static int ALEA = 3;
+	/**
+	 * Indique que la partie est gagnee. On ne peut que arreter.
+	 */
 	public final static int GAGNE = 4;
+	/**
+	 * Indique que le jeu vient d'etre lance. Similaire a FIN, on ne peut pas jouer ou arreter, mais on peut configurer la partie.
+	 */
 	public final static int INIT = -1;
 	
+	/**
+	 * nombre de deplacements dans la partie
+	 */
 	private static int deplacements = 0;
+	
+	/**
+	 * etat actuel de la partie
+	 * un des etats EN_COURS, FIN, ...
+	 */
 	private static int etat = INIT; 
 	
+	/**
+	 * reinitialise le nombre de deplacements
+	 */
 	public static void resetDeplacements() {
 		deplacements = 0;
 	}
 	
+	/**
+	 * incremente le nombre de deplacements
+	 */
 	public static void deplacer() {
 		deplacements++;
 	}
 	
+	/**
+	 * donne le nombre de deplacements
+	 * @return nombre de deplacements
+	 */
 	public static int getDeplacements() {
 		return deplacements;
 	}
 	
+	/**
+	 * donne l'etat actuel de la partie
+	 * @return etat actuel de la partie
+	 */
 	public static int getEtat() {
 		return etat;
 	}
 	
+	/**
+	 * change l'etat actuel de la partie
+	 * @param e
+	 * 			nouvel etat (utiliser les constantes)
+	 */
 	public static void setEtat(int e) {
 		if (e==EN_COURS || e==FIN || e==CONFIG || e==INIT || e==ALEA) {
 			etat = e;
