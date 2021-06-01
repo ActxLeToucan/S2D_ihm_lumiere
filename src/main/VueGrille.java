@@ -7,8 +7,8 @@ import java.util.Observer;
 
 public class VueGrille extends JPanel implements Observer {
 
-	final static Color COUL_ALLUME = Color.BLUE;
-	final static Color COUL_ETEINTE = Color.CYAN;
+	final static Color COUL_ALLUME = Color.CYAN;
+	final static Color COUL_ETEINTE = Color.BLUE;
 
 	private Grille modele;
 	// pour chaque case de la liste/tableau de lampe on affiche un rectangle
@@ -20,6 +20,7 @@ public class VueGrille extends JPanel implements Observer {
 		int tailleCarreY = getHeight()/Grille.TAILLE_GRILLE;
 		
 		if (modele != null) {
+			
 			for (int i = 0; i<Grille.TAILLE_GRILLE; i++) {
 				for (int j = 0; j<Grille.TAILLE_GRILLE; j++) {
 					if (modele.getEtatLampe(j, i)) {
@@ -28,6 +29,8 @@ public class VueGrille extends JPanel implements Observer {
 						g.setColor(COUL_ETEINTE);
 					}
 					g.fillRect(j*tailleCarreX, i*tailleCarreY, tailleCarreX, tailleCarreY);
+					g.setColor(Color.BLACK);
+					g.drawRect(j*tailleCarreX, i*tailleCarreY, tailleCarreX, tailleCarreY);
 				}
 			}
 		}
