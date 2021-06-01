@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Principale {
@@ -20,7 +21,7 @@ public class Principale {
 		grille.addObserver(vueGrille);
 		grille.addObserver(vueTxt);
 		grille.addObserver(vueDep);
-		//vueGrille.setPreferredSize(new Dimension(400,400));
+		vueGrille.setPreferredSize(new Dimension(400,400));
 		
 		//creer les controleurs
 		ControleurConfig ctrlConfig = new ControleurConfig(grille);
@@ -30,19 +31,23 @@ public class Principale {
 		ControleurNbAlea ctrlNbAlea = new ControleurNbAlea(grille);
 		//ControleurGrille ctrlGrille = new ControleurGrille(grille);
 
+		JPanel spinners = new JPanel();
+		spinners.add(new JLabel("Cases aléatoires"));
+		spinners.add(ctrlNbAlea);
+		
 		menu = new JPanel(new GridLayout(6, 1));
 		menu.add(ctrlConfig);
 		menu.add(ctrlAlea);
 		menu.add(ctrlJouer);
 		menu.add(vueDep);
 		menu.add(ctrlQuitter);
-		menu.add(ctrlNbAlea);
+		menu.add(spinners);
 		
 		//ranger tout dans une frame
 		JFrame frame=new JFrame();
 		
-		frame.add(vueGrille, BorderLayout.CENTER);
-		frame.add(menu, BorderLayout.WEST);
+		frame.add(vueGrille, BorderLayout.EAST);
+		frame.add(menu, BorderLayout.CENTER);
 		frame.setSize(new Dimension(600,400));
 		frame.setVisible(true);
 		
