@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -30,5 +31,14 @@ public class ControleurConfig extends JButton {
 				Partie.setEtat(Partie.CONFIG);
 			}
 		});
+	}
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		if (Partie.getEtat() == Partie.EN_COURS || Partie.getEtat() == Partie.CONFIG) {
+			this.setEnabled(false);
+		} else {
+			this.setEnabled(true);
+		}
 	}
 }

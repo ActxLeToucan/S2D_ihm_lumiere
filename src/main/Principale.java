@@ -13,26 +13,26 @@ public class Principale {
 		Grille grille = new Grille();
 
 		//creer des vues
-		VueGrille vueGrille = new VueGrille();
+		//VueGrille vueGrille = new VueGrille();
 		VueTexte vueTxt = new VueTexte();
 		VueDeplacements vueDep = new VueDeplacements();
 		//attacher les vues au modele
-		grille.addObserver(vueGrille);
+		//grille.addObserver(vueGrille);
 		grille.addObserver(vueTxt);
 		grille.addObserver(vueDep);
-		vueGrille.setPreferredSize(new Dimension(400,400));
+		//vueGrille.setPreferredSize(new Dimension(400,400));
 		
 		//creer les controleurs
 		ControleurConfig ctrlConfig = new ControleurConfig(grille);
-		ControleurAlea ctrlAlea = new ControleurAlea(grille);
-		ControleurJouer ctrlJouer = new ControleurJouer(grille);
+		//ControleurAlea ctrlAlea = new ControleurAlea(grille);
+		//ControleurJouer ctrlJouer = new ControleurJouer(grille);
 		ControleurQuitter ctrlQuitter = new ControleurQuitter(grille);
-		ControleurGrille ctrlGrille = new ControleurGrille(grille);
+		//ControleurGrille ctrlGrille = new ControleurGrille(grille);
 
-		menu = new JPanel(new GridLayout());
+		menu = new JPanel(new GridLayout(6, 1));
 		menu.add(ctrlConfig);
-		menu.add(ctrlAlea);
-		menu.add(ctrlJouer);
+		//menu.add(ctrlAlea);
+		//menu.add(ctrlJouer);
 		menu.add(vueDep);
 		menu.add(ctrlQuitter);
 		
