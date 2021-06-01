@@ -9,7 +9,7 @@ public class Lampe {
     private boolean estAllumee; 
 
     /**
-     * constructeur de lampe, elle eteinte a l initialisation
+     * constructeur de lampe, elle est eteinte a l initialisation
      */
     public Lampe(){
         this.estAllumee = false;
