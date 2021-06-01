@@ -29,11 +29,15 @@ public class Principale {
 		ControleurJouer ctrlJouer = new ControleurJouer(grille);
 		ControleurQuitter ctrlQuitter = new ControleurQuitter(grille);
 		ControleurNbAlea ctrlNbAlea = new ControleurNbAlea(grille);
+		ControleurCouleurOn ctrlCoulOn = new ControleurCouleurOn(grille);
+		ControleurCouleurOff ctrlCoulOff = new ControleurCouleurOff(grille);
 		//ControleurGrille ctrlGrille = new ControleurGrille(grille);
 
-		JPanel spinners = new JPanel();
-		spinners.add(new JLabel("Cases aléatoires"));
-		spinners.add(ctrlNbAlea);
+		JPanel options = new JPanel();
+		options.add(new JLabel("Cases aléatoires"));
+		options.add(ctrlNbAlea);
+		options.add(ctrlCoulOn);
+		options.add(ctrlCoulOff);
 		
 		menu = new JPanel(new GridLayout(6, 1));
 		menu.add(ctrlConfig);
@@ -41,7 +45,7 @@ public class Principale {
 		menu.add(ctrlJouer);
 		menu.add(vueDep);
 		menu.add(ctrlQuitter);
-		menu.add(spinners);
+		menu.add(options);
 		
 		//ranger tout dans une frame
 		JFrame frame=new JFrame();
@@ -54,6 +58,7 @@ public class Principale {
 		// init
 		grille.changerUneLampe(0, 0);
 		grille.changerUneLampe(0, 0);
+		grille.gg();
 	}
 	
 	/**

@@ -1,4 +1,5 @@
 package main;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -11,6 +12,8 @@ public class Grille extends Observable {
 	private static int taille = TAILLE_DEF;
 	private static int alea = 8;
 	private static Lampe[][] lampes;
+	private Color colorOn = Color.CYAN;
+	private Color colorOff = Color.BLUE;
 
 	/**
 	 * constructeur de grille
@@ -229,5 +232,43 @@ public class Grille extends Observable {
 				}
 			}
 		}
+	}
+	
+	/**
+	 * donne la couleur actuelle des lampes qui sont allumees
+	 * @return couleur lampes allumees
+	 */
+	public Color getColorOn() {
+		return colorOn;
+	}
+	
+	/**
+	 * change la couleur des lampes qui sont allumees
+	 * @param colorOn
+	 * 			couleur des lampes qui sont allumees
+	 */
+	public void setColorOn(Color colorOn) {
+		this.colorOn = colorOn;
+		setChanged();
+		notifyObservers();
+	}
+
+	/**
+	 * donne la couleur actuelle des lampes qui sont eteintes
+	 * @return couleur lampes eteintes
+	 */
+	public Color getColorOff() {
+		return colorOff;
+	}
+
+	/**
+	 * change la couleur des lampes qui sont eteintes
+	 * @param colorOff
+	 * 			couleur des lampes qui sont eteintes
+	 */
+	public void setColorOff(Color colorOff) {
+		this.colorOff = colorOff;
+		setChanged();
+		notifyObservers();
 	}
 }
