@@ -29,6 +29,9 @@ public class ControleurJouer extends JButton {
 			public void actionPerformed(ActionEvent e) {
                 // on lance la partie en changeant son etat a EN_COURS
                 Partie.setEtat(Partie.EN_COURS);
+                if (modele.getNbAllumees() == 0) {
+                	modele.gg();
+                }
 			}
 		});
     }

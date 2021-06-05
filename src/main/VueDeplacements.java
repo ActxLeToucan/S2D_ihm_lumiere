@@ -18,24 +18,26 @@ public class VueDeplacements extends JPanel implements Observer {
 	 */
 	private Grille grille;
 	
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-		if (grille != null) {
-			JPanel haut = new JPanel();
-			JPanel centre = new JPanel();
-			JLabel texte = new JLabel("Nb Deplacements");
-			JLabel nombre = new JLabel("" + Partie.getDeplacements());
-			haut.add(texte);
-			centre.add(nombre, new FlowLayout());
-			nombre.setFont(new Font(nombre.getFont().getFontName(), nombre.getFont().getStyle(), 20));
-			this.setLayout(new BorderLayout());
-			this.add(haut, BorderLayout.NORTH);
-			this.add(centre, BorderLayout.CENTER);
-		}
+	/**
+	 * affichage du nombre de deplacements
+	 */
+	private JLabel nombre;
+	
+	public VueDeplacements() {
+		JPanel haut = new JPanel();
+		JPanel centre = new JPanel();
+		JLabel texte = new JLabel("Nb Deplacements");
+		nombre = new JLabel("init");
+		haut.add(texte);
+		centre.add(nombre, new FlowLayout());
+		nombre.setFont(new Font(nombre.getFont().getFontName(), nombre.getFont().getStyle(), 20));
+		this.setLayout(new BorderLayout());
+		this.add(haut, BorderLayout.NORTH);
+		this.add(centre, BorderLayout.CENTER);
 	}
 	
 	public void update(Observable o, Object arg) {
 		grille = (Grille) o;
-		repaint();
+		nombre.setText("" + grille.getDeplacements());
 	}
 }

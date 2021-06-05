@@ -32,7 +32,7 @@ public class ControleurQuitter extends JButton {
 				Grille.setTaille(Grille.TAILLE_DEF);
                 modele.eteindreTout();
                 Partie.setEtat(Partie.FIN);
-                Partie.resetDeplacements();
+                modele.resetDeplacements();
 			}
 		});
     }

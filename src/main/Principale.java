@@ -40,7 +40,8 @@ public class Principale {
 		ControleurNbAlea ctrlNbAlea = new ControleurNbAlea(grille);
 		ControleurCouleurOn ctrlCoulOn = new ControleurCouleurOn(grille);
 		ControleurCouleurOff ctrlCoulOff = new ControleurCouleurOff(grille);
-		//ControleurGrille ctrlGrille = new ControleurGrille(grille);
+		ControleurGrille ctrlGrille = new ControleurGrille(grille, vueGrille);
+		vueGrille.addMouseListener(ctrlGrille);
 
 		JPanel options = new JPanel();
 		options.add(new JLabel("Cases aléatoires"));
@@ -58,7 +59,7 @@ public class Principale {
 		menu.setPreferredSize(new Dimension(200, 400));
 		
 		//ranger tout dans une frame
-		JFrame frame=new JFrame();
+		JFrame frame = new JFrame("Eteint la lumière !");
 		
 		frame.add(vueGrille, BorderLayout.CENTER);
 		frame.add(menu, BorderLayout.WEST);

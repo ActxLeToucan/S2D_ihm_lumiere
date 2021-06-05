@@ -14,6 +14,7 @@ public class Grille extends Observable {
 	private static Lampe[][] lampes;
 	private Color colorOn = Color.CYAN;
 	private Color colorOff = Color.BLUE;
+	private int deplacements;
 
 	/**
 	 * constructeur de grille
@@ -168,6 +169,7 @@ public class Grille extends Observable {
 	 * methode secrete
 	 */
 	public void gg() {
+		Partie.setEtat(Partie.GAGNE);
 		eteindreTout();
 		setTaille(15);
 		changerUneLampe(3,4);
@@ -268,6 +270,22 @@ public class Grille extends Observable {
 	 */
 	public void setColorOff(Color colorOff) {
 		this.colorOff = colorOff;
+		setChanged();
+		notifyObservers();
+	}
+	
+	public int getDeplacements() {
+		return deplacements;
+	}
+	
+	public void incrementerDeplacements() {
+		this.deplacements++;
+		setChanged();
+		notifyObservers();
+	}
+	
+	public void resetDeplacements() {
+		this.deplacements = 0;
 		setChanged();
 		notifyObservers();
 	}

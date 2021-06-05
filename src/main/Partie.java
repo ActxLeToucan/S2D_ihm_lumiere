@@ -27,37 +27,10 @@ public class Partie {
 	public final static int INIT = -1;
 	
 	/**
-	 * nombre de deplacements dans la partie
-	 */
-	private static int deplacements = 0;
-	
-	/**
 	 * etat actuel de la partie
 	 * un des etats EN_COURS, FIN, ...
 	 */
-	private static int etat = INIT; 
-	
-	/**
-	 * reinitialise le nombre de deplacements
-	 */
-	public static void resetDeplacements() {
-		deplacements = 0;
-	}
-	
-	/**
-	 * incremente le nombre de deplacements
-	 */
-	public static void deplacer() {
-		deplacements++;
-	}
-	
-	/**
-	 * donne le nombre de deplacements
-	 * @return nombre de deplacements
-	 */
-	public static int getDeplacements() {
-		return deplacements;
-	}
+	private static int etat = INIT;
 	
 	/**
 	 * donne l'etat actuel de la partie
@@ -73,7 +46,7 @@ public class Partie {
 	 * 			nouvel etat (utiliser les constantes)
 	 */
 	public static void setEtat(int e) {
-		if (e==EN_COURS || e==FIN || e==CONFIG || e==INIT || e==ALEA) {
+		if (e==EN_COURS || e==FIN || e==CONFIG || e==INIT || e==ALEA || e==GAGNE) {
 			etat = e;
 		}
 		Principale.repaintMenu();
