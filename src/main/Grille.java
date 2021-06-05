@@ -273,17 +273,23 @@ public class Grille extends Observable {
 		setChanged();
 		notifyObservers();
 	}
-	
+	/**
+	 * getter de deplacements
+	 */
 	public int getDeplacements() {
 		return deplacements;
 	}
-	
+	/**
+	 * incrementation du nombre de deplacement
+	 */
 	public void incrementerDeplacements() {
 		this.deplacements++;
 		setChanged();
 		notifyObservers();
 	}
-	
+	/**
+	 * remise a zero du nombre de deplacement (Quitter)
+	 */
 	public void resetDeplacements() {
 		this.deplacements = 0;
 		setChanged();
